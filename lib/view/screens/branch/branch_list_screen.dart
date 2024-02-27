@@ -36,6 +36,7 @@ class BranchListScreen extends StatefulWidget {
 }
 
 class _BranchListScreenState extends State<BranchListScreen> {
+
   List<BranchValue> _branchesValue = [];
   Set<Marker> _markers = HashSet<Marker>();
   late GoogleMapController _mapController;
@@ -58,7 +59,8 @@ class _BranchListScreenState extends State<BranchListScreen> {
     }
 
 
-    Provider.of<LocationProvider>(context, listen: false).getCurrentLatLong().then((latLong){
+    Provider.of<LocationProvider>(context, listen: false).
+    getCurrentLatLong().then((latLong){
       if(latLong != null) {
         _currentLocationLatLng = latLong;
       }
@@ -235,7 +237,6 @@ class _BranchListScreenState extends State<BranchListScreen> {
                             _setBranch();
 
                           }
-
 
                         }else{
                           showCustomSnackBar(getTranslated('select_branch_first', context));

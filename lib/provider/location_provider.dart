@@ -18,6 +18,7 @@ import 'package:google_maps_webservice/places.dart';
 import '../view/screens/address/widget/permission_dialog.dart';
 
 class LocationProvider with ChangeNotifier {
+
   final SharedPreferences? sharedPreferences;
   final LocationRepo? locationRepo;
 
@@ -120,7 +121,7 @@ class LocationProvider with ChangeNotifier {
           _pickPosition = Position(
             latitude: position!.target.latitude, longitude: position.target.longitude, timestamp: DateTime.now(),
             heading: 1, accuracy: 1, altitude: 1, speedAccuracy: 1, speed: 1,
-            altitudeAccuracy: 1, headingAccuracy: 1, 
+            altitudeAccuracy: 1, headingAccuracy: 1,
           );
         }
         if (_changeAddress) {

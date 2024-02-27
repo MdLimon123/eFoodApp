@@ -41,7 +41,10 @@ class _MenuScreenState extends State<MenuScreen> {
                 child: Container(
                   width: 1170,
                   padding: const EdgeInsets.symmetric(vertical: 30),
-                  decoration: BoxDecoration(color: Theme.of(context).primaryColor),
+                  decoration: const BoxDecoration(
+                      //color: Theme.of(context).primaryColor
+                    color: Color(0xFF28DF99)
+                  ),
                   child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
                     SizedBox(height: MediaQuery.of(context).padding.top),
                     Container(

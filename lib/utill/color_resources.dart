@@ -27,7 +27,7 @@ class ColorResources {
     return Provider.of<ThemeProvider>(context).darkTheme ?  footerCol0r.withOpacity(0.5) : footerCol0r;
   }
   static Color getFooterColor(BuildContext context) {
-    return Provider.of<ThemeProvider>(context).darkTheme ?  const Color(0xFF494949) :const Color(0xFFFFDDD9);
+    return Provider.of<ThemeProvider>(context).darkTheme ?  const Color(0xFF28DF99):const Color(0xFF0053B2);
   }
 
 
@@ -36,6 +36,8 @@ class ColorResources {
   static const Color borderColor = Color(0xFFDCDCDC);
   static const Color footerCol0r = Color(0xFFFFDDD9);
   static const Color cardShadowColor = Color(0xFFA7A7A7);
+  static const Color green = Color(0xFF28DF99);
+
 
 
 

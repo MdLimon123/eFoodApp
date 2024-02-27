@@ -1,4 +1,4 @@
-package com.example.user_app_and_web
+package com.eisheiifood
 
 import io.flutter.embedding.android.FlutterActivity
 

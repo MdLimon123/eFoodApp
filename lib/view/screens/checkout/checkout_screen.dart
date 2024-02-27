@@ -115,7 +115,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
       orderProvider.initializeTimeSlot(context).then((value) {
         orderProvider.sortTime();
       });
-      Provider.of<LocationProvider>(context, listen: false).initAddressList();
+      //Provider.of<LocationProvider>(context, listen: false).initAddressList();
       _cartList = [];
       widget.fromCart ? _cartList.addAll(Provider.of<CartProvider>(context, listen: false).cartList) : _cartList.addAll(widget.cartList!);
     }
@@ -267,7 +267,9 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
 
                             SizedBox(
                               height: 60,
-                              child: locationProvider.addressList != null ? locationProvider.addressList!.isNotEmpty ? ListView.builder(
+                              child:
+                              locationProvider.addressList != null ? locationProvider.addressList!.isNotEmpty ?
+                              ListView.builder(
                                 physics: const BouncingScrollPhysics(),
                                 scrollDirection: Axis.horizontal,
                                 padding: const EdgeInsets.only(left: Dimensions.paddingSizeSmall),

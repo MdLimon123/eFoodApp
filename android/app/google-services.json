@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:410522356318:android:ed53435b87e4bb553dc2cf",
         "android_client_info": {
-          "package_name": "com.sixamtech.efood"
+          "package_name": "com.eisheiifood"
         }
       },
       "oauth_client": [
@@ -17,7 +17,7 @@
           "client_id": "410522356318-7tlcgno659c5evkndbjg2gtjloskr7mf.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.sixamtech.efood",
+            "package_name": "com.eisheiifood",
             "certificate_hash": "5174bb127f738b159ef1dd0a987166a682761bf3"
           }
         },
@@ -25,7 +25,7 @@
           "client_id": "410522356318-c32dkv67ng6hf9bi5ffptjg05olom19o.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.sixamtech.efood",
+            "package_name": "com.eisheiifood",
             "certificate_hash": "32923842c0907e2407a71b36ba830534a1494fa1"
           }
         },
@@ -33,7 +33,7 @@
           "client_id": "410522356318-cg5288lsfsus8u830t10savn6rdqemjf.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.sixamtech.efood",
+            "package_name": "com.eisheiifood",
             "certificate_hash": "b9b0e55da089ae006457e4a7525d5d81e69555fc"
           }
         },
@@ -41,7 +41,7 @@
           "client_id": "410522356318-gr5gnblg9pnt4ler1a0qn2167iv99iqo.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.sixamtech.efood",
+            "package_name": "com.eisheiifood",
             "certificate_hash": "cd0ac511cd390e4642666eb8571050d5fe8aa319"
           }
         },
@@ -49,7 +49,7 @@
           "client_id": "410522356318-pmmlmde0pronsd8douu5r3ff7e7mh4uq.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.sixamtech.efood",
+            "package_name": "com.eisheiifood",
             "certificate_hash": "87f723e5721c8c8eb805f9a08bf95d5e1e0183b7"
           }
         },
@@ -74,7 +74,7 @@
               "client_id": "410522356318-3u3bo0nncpousqfrbnrhcs2dbp9k9k89.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.sixamtech.eFood",
+                "bundle_id": "com.eisheiifood",
                 "app_store_id": "1573754835"
               }
             }
@@ -111,7 +111,7 @@
               "client_id": "410522356318-3u3bo0nncpousqfrbnrhcs2dbp9k9k89.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.sixamtech.eFood",
+                "bundle_id": "com.eisheiifood",
                 "app_store_id": "1573754835"
               }
             }
@@ -148,7 +148,7 @@
               "client_id": "410522356318-3u3bo0nncpousqfrbnrhcs2dbp9k9k89.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.sixamtech.eFood",
+                "bundle_id": "com.eisheiifood",
                 "app_store_id": "1573754835"
               }
             }
@@ -217,7 +217,7 @@
               "client_id": "410522356318-3u3bo0nncpousqfrbnrhcs2dbp9k9k89.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.sixamtech.eFood",
+                "bundle_id": "com.eisheiifood",
                 "app_store_id": "1573754835"
               }
             }
@@ -254,7 +254,7 @@
               "client_id": "410522356318-3u3bo0nncpousqfrbnrhcs2dbp9k9k89.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.sixamtech.eFood",
+                "bundle_id": "com.eisheiifood",
                 "app_store_id": "1573754835"
               }
             }

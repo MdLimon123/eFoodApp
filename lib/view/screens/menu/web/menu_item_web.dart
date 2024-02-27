@@ -21,7 +21,7 @@ class MenuItemWeb extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             menu.iconWidget != null ? menu.iconWidget!
-                : Image.asset(menu.icon, width: 50, height: 50, color: Theme.of(context).textTheme.bodyLarge!.color),
+                : Image.asset(menu.image, width: 50, height: 50, color: Theme.of(context).textTheme.bodyLarge!.color),
             const SizedBox(height: Dimensions.paddingSizeLarge),
 
             Text(menu.title!, style: robotoRegular),

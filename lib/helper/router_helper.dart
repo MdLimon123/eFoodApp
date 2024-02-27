@@ -309,6 +309,7 @@ class RouterHelper {
           String decoded = utf8.decode(base64Url.decode('${state.uri.queryParameters['address']?.replaceAll(' ', '+')}'));
           addressModel = AddressModel.fromJson(jsonDecode(decoded));
         }
+
         return _routeHandler(context, AddNewAddressScreen(
             fromCheckout: state.uri.queryParameters['page'] == 'checkout',
             isEnableUpdate: isUpdate,

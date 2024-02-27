@@ -97,7 +97,7 @@ class Images {
   static const String openLock = 'assets/icon/open_lock.png';
   static const String doneWithFullBackground = 'assets/icon/done_with_full_background.png';
   static const String filterIcon = 'assets/icon/filter_icon.png';
-  static const String location = 'assets/icon/location.png';
+  static const String location = 'assets/image/track_order.png';
   static const String webLogOut = 'assets/icon/web_logout_icon.png';
   static const String facebookIcon = 'assets/icon/facebook_icon.png';
   static const String twitterIcon = 'assets/icon/twitter_icon.png';

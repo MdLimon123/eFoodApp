@@ -3,7 +3,7 @@ import 'package:flutter_restaurant/helper/app_mode.dart';
 import 'package:flutter_restaurant/utill/images.dart';
 
 class AppConstants {
-  static const String appName = 'eisheii Food';
+  static const String appName = 'eisheiiFood';
   static const String appVersion = '10.2';
   static const AppMode appMode = AppMode.release;
   static const String baseUrl =  'https://food.eisheii.com';
@@ -100,10 +100,10 @@ class AppConstants {
 
   static List<LanguageModel> languages = [
     LanguageModel(imageUrl: Images.unitedKingdom, languageName: 'English', countryCode: 'US', languageCode: 'en'),
-    LanguageModel(imageUrl: Images.arabic, languageName: 'Arabic', countryCode: 'SA', languageCode: 'ar'),
+    // LanguageModel(imageUrl: Images.arabic, languageName: 'Arabic', countryCode: 'SA', languageCode: 'ar'),
     LanguageModel(imageUrl: Images.bd, languageName: 'Bengali', countryCode: 'BD', languageCode: 'bn'),
-    LanguageModel(imageUrl: Images.india, languageName: 'Hindi', countryCode: 'IN', languageCode: 'hi'),
-    LanguageModel(imageUrl: Images.spain, languageName: 'Spanish', countryCode: 'ES', languageCode: 'es'),
+    // LanguageModel(imageUrl: Images.india, languageName: 'Hindi', countryCode: 'IN', languageCode: 'hi'),
+    // LanguageModel(imageUrl: Images.spain, languageName: 'Spanish', countryCode: 'ES', languageCode: 'es'),
   ];
 
   static const int balanceInputLen = 10;

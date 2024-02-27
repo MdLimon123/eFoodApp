@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.sixamtech.efood">
+    package="com.eisheiifood">
     <!-- io.flutter.app.FlutterApplication is an android.app.Application that
          calls FlutterMain.startInitialization(this); in its onCreate method.
          In most cases you can leave this as-is, but you if you want to provide
@@ -28,14 +28,14 @@
     </queries>
 
     <application
-        android:label="eFood"
+        android:label="eisheiiFood"
         android:requestLegacyExternalStorage="true"
         android:usesCleartextTraffic="true"
         android:icon="@mipmap/ic_launcher">
         android:allowBackup="false"
         android:fullBackupOnly="false"
         <meta-data android:name="com.google.android.geo.API_KEY"
-            android:value="YOUR_MAP_KEY_HERE"/>
+            android:value="AIzaSyAnV5DJ0BUbVV0TwsrsJUyVeLKePmXs1YI"/>
 
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
@@ -61,7 +61,7 @@
         </activity>
 
         <activity
-            android:name=".MainActivity"
+            android:name="com.eisheiifood.MainActivity"
             android:launchMode="singleTop"
             android:theme="@style/LaunchTheme"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
@@ -99,8 +99,8 @@
                 <action android:name="android.intent.action.VIEW"/>
                 <category android:name="android.intent.category.DEFAULT"/>
                 <category android:name="android.intent.category.BROWSABLE"/>
-                <data android:host="YOUR_DOMAIN_HERE" android:scheme="http"/>
-                <data android:host="YOUR_DOMAIN_HERE" android:scheme="https"/>
+                <data android:host="eisheii.com" android:scheme="http"/>
+                <data android:host="eisheii.com" android:scheme="https"/>
             </intent-filter>
 
         </activity>

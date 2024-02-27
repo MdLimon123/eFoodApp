@@ -46,7 +46,7 @@ class DeleteConfirmationDialog extends StatelessWidget {
                     valueColor: AlwaysStoppedAnimation<Color>(Theme.of(context).primaryColor),
                   ),
                 ));
-                Provider.of<LocationProvider>(context, listen: false).deleteUserAddressByID(addressModel.id, index, (bool isSuccessful, String message) {
+               Provider.of<LocationProvider>(context, listen: false).deleteUserAddressByID(addressModel.id, index, (bool isSuccessful, String message) {
                   context.pop();
                   showCustomSnackBar(message, isError: !isSuccessful);
                   context.pop();

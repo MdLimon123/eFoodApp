@@ -40,7 +40,7 @@ class _SelectLocationScreenState extends State<SelectLocationScreen> {
       double.parse(Provider.of<SplashProvider>(context, listen: false).configModel!.branches![0]!.latitude! ),
       double.parse(Provider.of<SplashProvider>(context, listen: false).configModel!.branches![0]!.longitude!),
     );
-    Provider.of<LocationProvider>(context, listen: false).setPickData();
+   Provider.of<LocationProvider>(context, listen: false).setPickData();
   }
 
   @override
@@ -85,7 +85,8 @@ class _SelectLocationScreenState extends State<SelectLocationScreen> {
                   ) : null,
                   width: Dimensions.webScreenWidth,
                   height: ResponsiveHelper.isDesktop(context) ?   height * 0.7 : height * 0.9,
-                  child: Consumer<LocationProvider>(
+                  child:
+                  Consumer<LocationProvider>(
                     builder: (context, locationProvider, child) => Stack(
                       clipBehavior: Clip.none, children: [
                       SafeArea(
@@ -129,7 +130,7 @@ class _SelectLocationScreenState extends State<SelectLocationScreen> {
                           child: Builder(
                               builder: (context) {
                                 _locationController.text = locationProvider.pickAddress!;
-                                // if(locationProvider.pickAddress.name != null && ResponsiveHelper.isMobilePhone()) {
+                                // if(locationProvider.pickAddress?.name != null && ResponsiveHelper.isMobilePhone()) {
                                 //   locationProvider.locationController.text = '${locationProvider.pickAddress.name ?? ''} ${locationProvider.pickAddress.subAdministrativeArea ?? ''} ${locationProvider.pickAddress.isoCountryCode ?? ''}';
                                 // }
 

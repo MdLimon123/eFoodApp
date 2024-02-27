@@ -110,7 +110,8 @@ class _WebAppBarState extends State<WebAppBar> {
       child: Column(
         children: [
           Container(
-            color: Theme.of(context).primaryColor,
+            //color: Theme.of(context).primaryColor,
+            color: const Color(0xFF0053B2),
             child: Center(
               child: SizedBox( width: 1170,
                 child: Padding(
@@ -124,7 +125,8 @@ class _WebAppBarState extends State<WebAppBar> {
                           '${getTranslated('restaurant_is_close_now', context)}',
                           style: rubikRegular.copyWith(fontSize: Dimensions.fontSizeLarge, color: Colors.white),
                         );
-                      }) : Consumer<LocationProvider>(
+                      }) :
+                      Consumer<LocationProvider>(
                         builder: (context, locationProvider, _) {
                           return locationProvider.address!.isNotEmpty ? InkWell(
                             onTap: ()=>   RouterHelper.getAddressRoute(),
@@ -153,11 +155,7 @@ class _WebAppBarState extends State<WebAppBar> {
                           const BranchButtonView(isRow: true, color: Colors.white),
                           const SizedBox(width: Dimensions.paddingSizeDefault),
 
-                          Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: Dimensions.paddingSizeSmall),
-                            child: Text(getTranslated('dark_theme', context)!, style: poppinsRegular.copyWith(color: Colors.white, fontSize: Dimensions.fontSizeExtraSmall)),
-                          ),
-                          const StatusWidget(),
+
                           const SizedBox(width: Dimensions.paddingSizeExtraLarge),
 
                           if(AppConstants.languages.length > 1) SizedBox(
@@ -210,6 +208,12 @@ class _WebAppBarState extends State<WebAppBar> {
                               );
                             }
                           ),
+
+                          Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: Dimensions.paddingSizeSmall),
+                            child: Text(getTranslated('dark_mode', context)!, style: poppinsRegular.copyWith(color: Colors.white, fontSize: Dimensions.fontSizeExtraSmall)),
+                          ),
+                          const StatusWidget(),
 
                       ],
                 ),

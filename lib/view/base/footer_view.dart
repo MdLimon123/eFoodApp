@@ -22,7 +22,8 @@ class FooterView extends StatelessWidget {
   Widget build(BuildContext context) {
     TextEditingController newsLetterController = TextEditingController();
     return Container(
-      color: ColorResources.getFooterColor(context),
+      //color: ColorResources.getFooterColor(context),
+      color: const Color(0xFF373948),
       width: double.maxFinite,
       child: Center(
         child: Column(
@@ -41,10 +42,10 @@ class FooterView extends StatelessWidget {
                               style: TextStyle(fontWeight: FontWeight.w800,fontSize: 48,color: Theme.of(context).primaryColor),),
                           ),
                           const SizedBox(height: Dimensions.paddingSizeLarge),
-                          Text(getTranslated('news_letter', context)!, style: robotoRegular.copyWith(fontWeight: FontWeight.w600, color: ColorResources.getGreyBunkerColor(context))),
+                          Text(getTranslated('news_letter', context)!, style: robotoRegular.copyWith(fontWeight: FontWeight.w600, color: Colors.white)),
 
                           const SizedBox(height: Dimensions.paddingSizeSmall),
-                          Text(getTranslated('subscribe_to_our', context)!, style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeDefault, color: ColorResources.getGreyBunkerColor(context))),
+                          Text(getTranslated('subscribe_to_our', context)!, style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeDefault,  color: Colors.white)),
 
                           const SizedBox(height: Dimensions.paddingSizeDefault),
 
@@ -111,7 +112,7 @@ class FooterView extends StatelessWidget {
                                 return Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    if(splashProvider.configModel!.socialMediaLink!.isNotEmpty)  Text(getTranslated('follow_us_on', context)!, style: rubikRegular.copyWith(color: ColorResources.getGreyBunkerColor(context),fontSize: Dimensions.fontSizeDefault)),
+                                    if(splashProvider.configModel!.socialMediaLink!.isNotEmpty)  Text(getTranslated('follow_us_on', context)!, style: rubikRegular.copyWith(color: Colors.white,fontSize: Dimensions.fontSizeDefault)),
                                     SizedBox(height: 50,
                                       child: ListView.builder(
                                         scrollDirection: Axis.horizontal,
@@ -187,15 +188,13 @@ class FooterView extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       const SizedBox(height: Dimensions.paddingSizeLarge * 2),
-                      Text(getTranslated('my_account', context)!, style: rubikBold.copyWith(color: ColorResources.getGreyBunkerColor(context),fontSize: Dimensions.fontSizeExtraLarge)),
+                      Text(getTranslated('my_account', context)!, style: rubikBold.copyWith( color: Colors.white,fontSize: Dimensions.fontSizeExtraLarge)),
                       const SizedBox(height: Dimensions.paddingSizeLarge),
-
-
                       OnHover(
                           builder: (hovered) {
                             return InkWell(
                                 onTap: ()=> RouterHelper.getProfileRoute(),
-                                child: Text(getTranslated('profile', context)!, style: hovered? rubikMedium.copyWith(color: Theme.of(context).primaryColor) : rubikRegular.copyWith(color: ColorResources.getGreyBunkerColor(context),fontSize: Dimensions.fontSizeDefault)));
+                                child: Text(getTranslated('profile', context)!, style: hovered? rubikMedium.copyWith(color: Colors.white) : rubikRegular.copyWith(color: Colors.grey,fontSize: Dimensions.fontSizeDefault)));
                           }
                       ),
                       const SizedBox(height: Dimensions.paddingSizeSmall),
@@ -203,7 +202,7 @@ class FooterView extends StatelessWidget {
                           builder: (hovered) {
                             return InkWell(
                                 onTap: ()=> RouterHelper.getAddressRoute(),
-                                child: Text(getTranslated('address', context)!, style: hovered? rubikMedium.copyWith(color: Theme.of(context).primaryColor) : rubikRegular.copyWith(color: ColorResources.getGreyBunkerColor(context),fontSize: Dimensions.fontSizeDefault)));
+                                child: Text(getTranslated('address', context)!, style: hovered? rubikMedium.copyWith(color: Colors.white) : rubikRegular.copyWith(color: Colors.grey,fontSize: Dimensions.fontSizeDefault)));
                           }
                       ),
                       const SizedBox(height: Dimensions.paddingSizeSmall),
@@ -211,14 +210,13 @@ class FooterView extends StatelessWidget {
                           builder: (hovered) {
                             return InkWell(
                                 onTap: ()=> RouterHelper.getChatRoute(orderModel: null),
-                                child: Text(getTranslated('live_chat', context)!, style: hovered? rubikMedium.copyWith(color: Theme.of(context).primaryColor) : rubikRegular.copyWith(color: ColorResources.getGreyBunkerColor(context),fontSize: Dimensions.fontSizeDefault)));
+                                child: Text(getTranslated('live_chat', context)!, style: hovered? rubikMedium.copyWith(color: Colors.white) : rubikRegular.copyWith(color: Colors.grey,fontSize: Dimensions.fontSizeDefault)));
                           }
                       ),
                       const SizedBox(height: Dimensions.paddingSizeSmall),
                       OnHover(builder: (hovered)=> InkWell(
                         onTap: ()=> RouterHelper.getDashboardRoute('order'),
-                        child: Text(getTranslated('my_order', context)!, style: hovered? rubikMedium.copyWith(color: Theme.of(context).primaryColor) : rubikRegular.copyWith(
-                          color: ColorResources.getGreyBunkerColor(context),fontSize: Dimensions.fontSizeDefault,
+                        child: Text(getTranslated('my_order', context)!, style: hovered? rubikMedium.copyWith(color: Colors.white) : rubikRegular.copyWith(color: Colors.grey,fontSize: Dimensions.fontSizeDefault,
                         )),
                       )),
 
@@ -227,13 +225,13 @@ class FooterView extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       const SizedBox(height: Dimensions.paddingSizeLarge * 2),
-                      Text(getTranslated('quick_links', context)!, style: rubikBold.copyWith(color: ColorResources.getGreyBunkerColor(context),fontSize: Dimensions.fontSizeExtraLarge)),
+                      Text(getTranslated('quick_links', context)!, style: rubikBold.copyWith(color: Colors.white,fontSize: Dimensions.fontSizeExtraLarge)),
                       const SizedBox(height: Dimensions.paddingSizeLarge),
                       OnHover(
                           builder: (hovered) {
                             return InkWell(
                                 onTap: () => RouterHelper.getSupportRoute(),
-                                child: Text(getTranslated('contact_us', context)!, style: hovered? rubikMedium.copyWith(color: Theme.of(context).primaryColor) : rubikRegular.copyWith(color: ColorResources.getGreyBunkerColor(context),fontSize: Dimensions.fontSizeDefault)));
+                                child: Text(getTranslated('contact_us', context)!, style: hovered?rubikMedium.copyWith(color: Colors.white) : rubikRegular.copyWith(color: Colors.grey,fontSize: Dimensions.fontSizeDefault)));
                           }
                       ),
                       const SizedBox(height: Dimensions.paddingSizeSmall),
@@ -241,7 +239,7 @@ class FooterView extends StatelessWidget {
                           builder: (hovered) {
                             return InkWell(
                                 onTap: () =>  RouterHelper.getPolicyRoute(),
-                                child: Text(getTranslated('privacy_policy', context)!, style: hovered? rubikMedium.copyWith(color: Theme.of(context).primaryColor) : rubikRegular.copyWith(color: ColorResources.getGreyBunkerColor(context),fontSize: Dimensions.fontSizeDefault)));
+                                child: Text(getTranslated('privacy_policy', context)!, style: hovered? rubikMedium.copyWith(color: Colors.white) : rubikRegular.copyWith(color: Colors.grey,fontSize: Dimensions.fontSizeDefault)));
                           }
                       ),
                       const SizedBox(height: Dimensions.paddingSizeSmall),
@@ -250,7 +248,7 @@ class FooterView extends StatelessWidget {
                           builder: (hovered) {
                             return InkWell(
                                 onTap: () =>  RouterHelper.getTermsRoute(),
-                                child: Text(getTranslated('terms_and_condition', context)!, style: hovered? rubikMedium.copyWith(color: Theme.of(context).primaryColor) : rubikRegular.copyWith(color: ColorResources.getGreyBunkerColor(context),fontSize: Dimensions.fontSizeDefault)));
+                                child: Text(getTranslated('terms_and_condition', context)!, style: hovered? rubikMedium.copyWith(color: Colors.white) : rubikRegular.copyWith(color: Colors.grey,fontSize: Dimensions.fontSizeDefault)));
                           }
                       ),
                       const SizedBox(height: Dimensions.paddingSizeSmall),
@@ -258,7 +256,7 @@ class FooterView extends StatelessWidget {
                           builder: (hovered) {
                             return InkWell(
                                 onTap: () => RouterHelper.getAboutUsRoute(),
-                                child: Text(getTranslated('about_us', context)!, style: hovered? rubikMedium.copyWith(color: Theme.of(context).primaryColor) : rubikRegular.copyWith(color: ColorResources.getGreyBunkerColor(context),fontSize: Dimensions.fontSizeDefault)));
+                                child: Text(getTranslated('about_us', context)!, style: hovered? rubikMedium.copyWith(color: Colors.white) : rubikRegular.copyWith(color: Colors.grey,fontSize: Dimensions.fontSizeDefault)));
                           }
                       ),
 
@@ -271,7 +269,8 @@ class FooterView extends StatelessWidget {
               width: 500.0,
               child: Text(Provider.of<SplashProvider>(context,listen: false).configModel!.footerCopyright ??
                   '${getTranslated('copyright', context)} ${Provider.of<SplashProvider>(context,listen: false).configModel!.restaurantName}',
-                  overflow: TextOverflow.ellipsis,maxLines: 1,textAlign: TextAlign.center),
+                  overflow: TextOverflow.ellipsis,maxLines: 1,textAlign: TextAlign.center,
+              style: const TextStyle(color: Colors.white),),
             ),
             const SizedBox(height: Dimensions.paddingSizeDefault)
           ],

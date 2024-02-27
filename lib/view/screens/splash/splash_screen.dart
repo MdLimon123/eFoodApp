@@ -124,7 +124,8 @@ class _SplashScreenState extends State<SplashScreen> {
                 placeholder: Images.placeholderRectangle, height: 165,
                 image: splash.baseUrls != null ? '${splash.baseUrls!.restaurantImageUrl}/${splash.configModel!.restaurantLogo}' : '',
                 imageErrorBuilder: (c, o, s) => Image.asset(Images.placeholderRectangle, height: 165),
-              ) : Image.asset(Images.logo, height: 150),
+              ) :
+              Image.asset(Images.logo, height: 150),
               const SizedBox(height: 30),
               Text(
                 ResponsiveHelper.isWeb() ? splash.configModel!.restaurantName! : AppConstants.appName,

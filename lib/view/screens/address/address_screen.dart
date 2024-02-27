@@ -34,7 +34,7 @@ class _AddressScreenState extends State<AddressScreen> {
 
     _isLoggedIn = Provider.of<AuthProvider>(context, listen: false).isLoggedIn();
     if(_isLoggedIn) {
-      Provider.of<LocationProvider>(context, listen: false).initAddressList();
+      //Provider.of<LocationProvider>(context, listen: false).initAddressList();
     }
   }
 
@@ -53,11 +53,13 @@ class _AddressScreenState extends State<AddressScreen> {
               Icons.add, color: Colors.white),
         ) : null,
       ) : null,
-      body: _isLoggedIn ? Consumer<LocationProvider>(
+      body: _isLoggedIn ?
+      Consumer<LocationProvider>(
         builder: (context, locationProvider, child) {
           return RefreshIndicator(
             onRefresh: () async {
-              await Provider.of<LocationProvider>(context, listen: false).initAddressList();
+              await Provider.of<LocationProvider>(context, listen: false);
+              //initAddressList();
             },
             backgroundColor: Theme.of(context).primaryColor,
 
@@ -81,7 +83,8 @@ class _AddressScreenState extends State<AddressScreen> {
                              ]),
                            ),
 
-                           locationProvider.addressList == null
+                           locationProvider.addressList
+                               == null
                                ? SizedBox(height: MediaQuery.of(context).size.height, child: const Center(child: CircularProgressIndicator()))
                                : locationProvider.addressList!.isNotEmpty
                                ? GridView.builder(
@@ -115,7 +118,9 @@ class _AddressScreenState extends State<AddressScreen> {
             ),
           );
         },
-      ) : const NotLoggedInScreen(),
+      )
+          :
+      const NotLoggedInScreen(),
     );
   }
 

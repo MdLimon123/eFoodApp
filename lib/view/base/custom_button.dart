@@ -23,7 +23,7 @@ class CustomButton extends StatelessWidget {
   Widget build(BuildContext context) {
     final ButtonStyle flatButtonStyle = TextButton.styleFrom(
       backgroundColor: onTap == null ? Theme.of(context).disabledColor : transparent
-          ? Colors.transparent : backgroundColor ?? Theme.of(context).primaryColor,
+          ? Colors.transparent : const Color(0xFF28DF99) ?? Theme.of(context).primaryColor,
       // minimumSize: Size(MediaQuery.of(context).size.width, 50),
       minimumSize: Size(width != null ? width! : Dimensions.webScreenWidth, height != null ? height! : 50),
 

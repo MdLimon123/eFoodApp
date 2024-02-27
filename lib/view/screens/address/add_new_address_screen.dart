@@ -76,7 +76,7 @@ class _AddNewAddressScreenState extends State<AddNewAddressScreen> {
         countryCode =  CountryCode.fromDialCode(code).code;
       }
       _updateAddress = false;
-      Provider.of<LocationProvider>(context, listen: false).updatePosition(CameraPosition(target: LatLng(double.parse(widget.address!.latitude!), double.parse(widget.address!.longitude!))), true, widget.address!.address, context, false);
+       Provider.of<LocationProvider>(context, listen: false).updatePosition(CameraPosition(target: LatLng(double.parse(widget.address!.latitude!), double.parse(widget.address!.longitude!))), true, widget.address!.address, context, false);
 
       _contactPersonNameController.text = '${widget.address!.contactPersonName}';
       _contactPersonNumberController.text = code != null ? '${widget.address!.contactPersonNumber}'.replaceAll(code, '') : '${widget.address!.contactPersonNumber}';
@@ -84,11 +84,11 @@ class _AddNewAddressScreenState extends State<AddNewAddressScreen> {
       _houseNumberController.text = widget.address!.houseNumber ?? '';
       _florNumberController.text = widget.address!.floorNumber ?? '';
       if (widget.address!.addressType == 'Home') {
-        Provider.of<LocationProvider>(context, listen: false).updateAddressIndex(0, false);
+       // Provider.of<LocationProvider>(context, listen: false).updateAddressIndex(0, false);
       } else if (widget.address!.addressType == 'Workplace') {
-        Provider.of<LocationProvider>(context, listen: false).updateAddressIndex(1, false);
+      //  Provider.of<LocationProvider>(context, listen: false).updateAddressIndex(1, false);
       } else {
-        Provider.of<LocationProvider>(context, listen: false).updateAddressIndex(2, false);
+      //  Provider.of<LocationProvider>(context, listen: false).updateAddressIndex(2, false);
       }
     }else {
       if(authProvider.isLoggedIn()){
@@ -103,9 +103,9 @@ class _AddNewAddressScreenState extends State<AddNewAddressScreen> {
         _contactPersonNameController.text = '${userModel!.fName ?? ''}'
             ' ${userModel.lName ?? ''}';
         _contactPersonNumberController.text = (code != null ? (userModel.phone ?? '').replaceAll(code, '') : userModel.phone ?? '');
-        _streetNumberController.text = widget.address!.streetNumber ?? '';
-        _houseNumberController.text = widget.address!.houseNumber ?? '';
-        _florNumberController.text = widget.address!.floorNumber ?? '';
+        _streetNumberController.text = widget.address?.streetNumber ?? '';
+        _houseNumberController.text = widget.address?.houseNumber ?? '';
+        _florNumberController.text = widget.address?.floorNumber ?? '';
 
       }
     }
@@ -140,7 +140,7 @@ class _AddNewAddressScreenState extends State<AddNewAddressScreen> {
                         width: 1170,
                         child: Column(
                           children: [
-                            if(!ResponsiveHelper.isDesktop(context)) mapWidget(context),
+                            //if(!ResponsiveHelper.isDesktop(context)) mapWidget(context),
                             // for label us
                             if(!ResponsiveHelper.isDesktop(context)) detailsWidget(context),
                             if(ResponsiveHelper.isDesktop(context))IntrinsicHeight(
@@ -151,6 +151,7 @@ class _AddNewAddressScreenState extends State<AddNewAddressScreen> {
                                     flex : 6,
                                     child: mapWidget(
                                         context),
+
                                   ),
                                   const SizedBox(width: Dimensions.paddingSizeDefault),
                                   Expanded(
@@ -222,6 +223,9 @@ class _AddNewAddressScreenState extends State<AddNewAddressScreen> {
             child: !locationProvider.isLoading ? CustomButton(
               btnTxt: widget.isEnableUpdate ? getTranslated('update_address', context) : getTranslated('save_location', context),
               onTap: locationProvider.loading ? null : () {
+
+                print('product purchase successfully');
+
                 List<Branches?> branches = Provider.of<SplashProvider>(context, listen: false).configModel!.branches!;
                 bool isAvailable = branches.length == 1 && (branches[0]!.latitude == null || branches[0]!.latitude!.isEmpty);
                 if(!isAvailable) {
@@ -290,6 +294,7 @@ class _AddNewAddressScreenState extends State<AddNewAddressScreen> {
       }
     );
   }
+
 
   Container mapWidget(BuildContext context) {
     return Container(
@@ -468,6 +473,8 @@ class _AddNewAddressScreenState extends State<AddNewAddressScreen> {
       ),
     );
   }
+
+
 
   Widget detailsWidget(BuildContext context) {
     return Consumer<LocationProvider>(

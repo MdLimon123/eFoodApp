@@ -28,49 +28,49 @@ class MenuScreenWeb extends StatelessWidget {
     final bool isLoggedIn = Provider.of<AuthProvider>(context, listen: false).isLoggedIn();
 
     final List<MenuModel> menuList = [
-      MenuModel(icon: Images.order, title: getTranslated('my_order', context), route: ()=> RouterHelper.getDashboardRoute('order')),
-      MenuModel(icon: Images.trackOrder, title: getTranslated('order_details', context), route:()=> RouterHelper.getOrderSearchScreen()),
-      MenuModel(icon: Images.profile, title: getTranslated('profile', context), route:()=>  RouterHelper.getProfileRoute()),
-      MenuModel(icon: Images.location, title: getTranslated('address', context), route:()=>  RouterHelper.getAddressRoute()),
-      MenuModel(icon: Images.message, title: getTranslated('message', context), route:()=>  RouterHelper.getChatRoute(orderModel: null)),
-      MenuModel(icon: Images.coupon, title: getTranslated('coupon', context), route:()=>  RouterHelper.getCouponRoute()),
-      MenuModel(icon: Images.notification, title: getTranslated('notification', context), route:()=> RouterHelper.getNotificationRoute()),
+      MenuModel(image: Images.order, title: getTranslated('my_order', context), route: ()=> RouterHelper.getDashboardRoute('order')),
+      MenuModel(image: Images.trackOrder, title: getTranslated('order_details', context), route:()=> RouterHelper.getOrderSearchScreen()),
+      MenuModel(image: Images.profile, title: getTranslated('profile', context), route:()=>  RouterHelper.getProfileRoute()),
+      MenuModel(image: Images.location, title: getTranslated('address', context), route:()=>  RouterHelper.getAddressRoute()),
+      MenuModel(image: Images.message, title: getTranslated('message', context), route:()=>  RouterHelper.getChatRoute(orderModel: null)),
+      MenuModel(image: Images.coupon, title: getTranslated('coupon', context), route:()=>  RouterHelper.getCouponRoute()),
+      MenuModel(image: Images.notification, title: getTranslated('notification', context), route:()=> RouterHelper.getNotificationRoute()),
       if(splashProvider.configModel!.referEarnStatus!)
-        MenuModel(icon: Images.referralIcon, title: getTranslated('refer_and_earn', context), route:()=>  RouterHelper.getReferAndEarnRoute()),
+        MenuModel(image: Images.referralIcon, title: getTranslated('refer_and_earn', context), route:()=>  RouterHelper.getReferAndEarnRoute()),
       if(splashProvider.configModel!.walletStatus!)
-        MenuModel(icon: Images.wallet, title: getTranslated('wallet', context), route:()=>  RouterHelper.getWalletRoute(true)),
+        MenuModel(image: Images.wallet, title: getTranslated('wallet', context), route:()=>  RouterHelper.getWalletRoute(true)),
       if(splashProvider.configModel!.loyaltyPointStatus!)
-        MenuModel(icon: Images.loyaltyIcon, title: getTranslated('loyalty_point', context), route:()=> RouterHelper.getLoyaltyScreen()),
+        MenuModel(image: Images.loyaltyIcon, title: getTranslated('loyalty_point', context), route:()=> RouterHelper.getLoyaltyScreen()),
 
-      MenuModel(icon: Images.helpSupport, title: getTranslated('help_and_support', context), route:()=>  RouterHelper.getSupportRoute()),
-      MenuModel(icon: Images.privacyPolicy, title: getTranslated('privacy_policy', context), route:()=> RouterHelper.getPolicyRoute()),
-      MenuModel(icon: Images.termsAndCondition, title: getTranslated('terms_and_condition', context), route:()=>  RouterHelper.getTermsRoute()),
+      MenuModel(image: Images.helpSupport, title: getTranslated('Help & Center', context), route:()=>  RouterHelper.getSupportRoute()),
+      MenuModel(image: Images.privacyPolicy, title: getTranslated('privacy_policy', context), route:()=> RouterHelper.getPolicyRoute()),
+      MenuModel(image: Images.termsAndCondition, title: getTranslated('terms_and_condition', context), route:()=>  RouterHelper.getTermsRoute()),
 
       if(splashProvider.policyModel != null
           && splashProvider.policyModel!.refundPage != null
           && splashProvider.policyModel!.refundPage!.status!
-      ) MenuModel(icon: Images.refundPolicy, title: getTranslated('refund_policy', context), route: ()=>  RouterHelper.getRefundPolicyRoute()),
+      ) MenuModel(image: Images.refundPolicy, title: getTranslated('refund_policy', context), route: ()=>  RouterHelper.getRefundPolicyRoute()),
 
       if(splashProvider.policyModel != null
           && splashProvider.policyModel!.returnPage != null
           && splashProvider.policyModel!.returnPage!.status!
-      ) MenuModel(icon: Images.returnPolicy, title: getTranslated('return_policy', context), route: ()=>  RouterHelper.getReturnPolicyRoute()),
+      ) MenuModel(image: Images.returnPolicy, title: getTranslated('return_policy', context), route: ()=>  RouterHelper.getReturnPolicyRoute()),
 
       if(splashProvider.policyModel != null
           && splashProvider.policyModel!.cancellationPage != null
           && splashProvider.policyModel!.cancellationPage!.status!
-      ) MenuModel(icon: Images.cancellationPolicy, title: getTranslated('cancellation_policy', context), route:()=>  RouterHelper.getCancellationPolicyRoute()),
+      ) MenuModel(image: Images.cancellationPolicy, title: getTranslated('cancellation_policy', context), route:()=>  RouterHelper.getCancellationPolicyRoute()),
 
-      MenuModel(icon: Images.aboutUs, title: getTranslated('about_us', context), route:()=>  RouterHelper.getAboutUsRoute()),
+      //MenuModel(icon: Images.aboutUs, title: getTranslated('about_us', context), route:()=>  RouterHelper.getAboutUsRoute()),
+
+      // MenuModel(
+      //   icon: Images.version,
+      //   title: "${getTranslated('version', context)} ${Provider.of<SplashProvider>(context, listen: false).configModel!.softwareVersion ?? AppConstants.appVersion}",
+      //   route: (){},
+      // ),
 
       MenuModel(
-        icon: Images.version,
-        title: "${getTranslated('version', context)} ${Provider.of<SplashProvider>(context, listen: false).configModel!.softwareVersion ?? AppConstants.appVersion}",
-        route: (){},
-      ),
-
-      MenuModel(
-        icon: Images.login, title: getTranslated(isLoggedIn ? 'logout' : 'login', context),
+        image: Images.login, title: getTranslated(isLoggedIn ? 'logout' : 'login', context),
         route: isLoggedIn ? (){
           showDialog(context: context, barrierDismissible: false, builder: (context) => const SignOutConfirmationDialog());
         } : ()=> RouterHelper.getLoginRoute(),

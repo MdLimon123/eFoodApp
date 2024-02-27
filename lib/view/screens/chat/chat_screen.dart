@@ -62,7 +62,9 @@ class _ChatScreenState extends State<ChatScreen> {
     return Scaffold(
       appBar: ResponsiveHelper.isDesktop(context) ? const PreferredSize(preferredSize: Size.fromHeight(100), child: WebAppBar())
           : AppBar(title: isAdmin ? Text('${Provider.of<SplashProvider>(context,listen: false).configModel!.restaurantName}')
-          : Text('${widget.orderModel!.deliveryMan!.fName!} ${widget.orderModel!.deliveryMan!.lName!}'),backgroundColor: Theme.of(context).primaryColor,
+          : Text('${widget.orderModel!.deliveryMan!.fName!} ${widget.orderModel!.deliveryMan!.lName!}'),
+          //backgroundColor: Theme.of(context).primaryColor,
+          backgroundColor: const Color(0xFF28DF99),
           actions: <Widget>[
             Padding(
               padding: const EdgeInsets.all(8.0),
@@ -70,7 +72,8 @@ class _ChatScreenState extends State<ChatScreen> {
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(50),
                     border: Border.all(width: 2,color: Theme.of(context).cardColor),
-                    color: Theme.of(context).cardColor),
+                    color: Theme.of(context).cardColor
+                ),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(50),
                   child: FadeInImage.assetNetwork(

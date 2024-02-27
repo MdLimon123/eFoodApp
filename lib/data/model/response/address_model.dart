@@ -44,9 +44,9 @@ class AddressModel {
     userId = json['user_id'];
     method = json['_method'];
     contactPersonName = json['contact_person_name'];
-    streetNumber = json['road'];
-    floorNumber = json['floor'];
-    houseNumber = json['house'];
+    streetNumber = json['road'] ?? "";
+    floorNumber = json['floor'] ?? "";
+    houseNumber = json['house'] ?? "";
   }
 
   Map<String, dynamic> toJson() {

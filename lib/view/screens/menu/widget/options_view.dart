@@ -8,7 +8,6 @@ import 'package:flutter_restaurant/provider/auth_provider.dart';
 import 'package:flutter_restaurant/provider/profile_provider.dart';
 import 'package:flutter_restaurant/provider/splash_provider.dart';
 import 'package:flutter_restaurant/provider/theme_provider.dart';
-import 'package:flutter_restaurant/utill/app_constants.dart';
 import 'package:flutter_restaurant/utill/dimensions.dart';
 import 'package:flutter_restaurant/utill/images.dart';
 import 'package:flutter_restaurant/utill/styles.dart';
@@ -43,7 +42,7 @@ class OptionsView extends StatelessWidget {
               SwitchListTile(
                 value: Provider.of<ThemeProvider>(context).darkTheme,
                 onChanged: (bool isActive) =>Provider.of<ThemeProvider>(context, listen: false).toggleTheme(),
-                title: Text(getTranslated('dark_theme', context)!, style: rubikMedium.copyWith(fontSize: Dimensions.fontSizeLarge)),
+                title: Text(getTranslated('dark_mode', context)!, style: rubikMedium.copyWith(fontSize: Dimensions.fontSizeLarge)),
                 activeColor: Theme.of(context).primaryColor,
               ),
 
@@ -55,19 +54,25 @@ class OptionsView extends StatelessWidget {
 
               ListTile(
                 onTap: () => ResponsiveHelper.isMobilePhone() ? onTap!(2) : RouterHelper.getDashboardRoute('order'),
-                leading: Image.asset(Images.order, width: 20, height: 20, color: Theme.of(context).textTheme.bodyLarge!.color),
+                leading: Image.asset(Images.order, width: 20, height: 20,
+                    color: Theme.of(context).textTheme.bodyLarge!.color
+                ),
                 title: Text(getTranslated('my_order', context)!, style: rubikMedium.copyWith(fontSize: Dimensions.fontSizeLarge)),
               ),
 
               ListTile(
                 onTap: () => RouterHelper.getOrderSearchScreen(),
-                leading: Image.asset(Images.trackOrder, width: 20, height: 20, color: Theme.of(context).textTheme.bodyLarge!.color),
+                leading: Image.asset(Images.trackOrder, width: 20, height: 20,
+                    //color: Theme.of(context).textTheme.bodyLarge!.color
+                ),
                 title: Text(getTranslated('order_details', context)!, style: rubikMedium.copyWith(fontSize: Dimensions.fontSizeLarge)),
               ),
 
               ListTile(
                 onTap: () => RouterHelper.getNotificationRoute(),
-                leading: Image.asset(Images.notification, width: 20, height: 20, color: Theme.of(context).textTheme.bodyLarge!.color),
+                leading: Image.asset(Images.notification, width: 20, height: 20,
+                    //color: Theme.of(context).textTheme.bodyLarge!.color
+                ),
                 title: Text(getTranslated('notification', context)!, style: rubikMedium.copyWith(fontSize: Dimensions.fontSizeLarge)),
               ),
 
@@ -80,17 +85,23 @@ class OptionsView extends StatelessWidget {
 
               ListTile(
                 onTap: () => RouterHelper.getProfileRoute(),
-                leading: Image.asset(Images.profile, width: 20, height: 20, color: Theme.of(context).textTheme.bodyLarge!.color),
+                leading: Image.asset(Images.profile, width: 20, height: 20,
+                    //color: Theme.of(context).textTheme.bodyLarge!.color
+                ),
                 title: Text(getTranslated('profile', context)!, style: rubikMedium.copyWith(fontSize: Dimensions.fontSizeLarge)),
               ),
               ListTile(
                 onTap: () => RouterHelper.getAddressRoute(),
-                leading: Image.asset(Images.location, width: 20, height: 20, color: Theme.of(context).textTheme.bodyLarge!.color),
+                leading: Image.asset(Images.location, width: 20, height: 20,
+                    //color: Theme.of(context).textTheme.bodyLarge!.color
+                ),
                 title: Text(getTranslated('address', context)!, style: rubikMedium.copyWith(fontSize: Dimensions.fontSizeLarge)),
               ),
               ListTile(
                 onTap: () => RouterHelper.getChatRoute(orderModel: null),
-                leading: Image.asset(Images.message, width: 20, height: 20, color: Theme.of(context).textTheme.bodyLarge!.color),
+                leading: Image.asset(Images.message, width: 20, height: 20,
+                    //color: Theme.of(context).textTheme.bodyLarge!.color
+                ),
                 title: Text(getTranslated('message', context)!, style: rubikMedium.copyWith(fontSize: Dimensions.fontSizeLarge)),
               ),
               ListTile(
@@ -100,7 +111,9 @@ class OptionsView extends StatelessWidget {
               ),
               ResponsiveHelper.isDesktop(context) ? ListTile(
                 onTap: () => RouterHelper.getNotificationRoute(),
-                leading: Image.asset(Images.notification, width: 20, height: 20, color: Theme.of(context).textTheme.bodyLarge!.color),
+                leading: Image.asset(Images.notification, width: 20, height: 20,
+                    color: Theme.of(context).textTheme.bodyLarge!.color
+                ),
                 title: Text(getTranslated('notifications', context)!, style: rubikMedium.copyWith(fontSize: Dimensions.fontSizeLarge)),
               ) : const SizedBox(),
               ListTile(
@@ -110,8 +123,11 @@ class OptionsView extends StatelessWidget {
               ),
               ListTile(
                 onTap: () => RouterHelper.getSupportRoute(),
-                leading: SizedBox(width:20,height: 20,child: Image.asset(Images.helpSupport,color: Theme.of(context).textTheme.bodyLarge?.color)),
-                title: Text(getTranslated('help_and_support', context)!, style: rubikMedium.copyWith(fontSize: Dimensions.fontSizeLarge)),
+                leading: SizedBox(width:20,height: 20,child: Image.asset(Images.
+                 helpSupport,
+                    // color: Theme.of(context).textTheme.bodyLarge?.color
+                )),
+                title: Text(getTranslated('Help & Center', context)!, style: rubikMedium.copyWith(fontSize: Dimensions.fontSizeLarge)),
               ),
               ListTile(
                 onTap: () => RouterHelper.getPolicyRoute(),
@@ -120,7 +136,9 @@ class OptionsView extends StatelessWidget {
               ),
               ListTile(
                 onTap: () => RouterHelper.getTermsRoute(),
-                leading: SizedBox(width:20,height: 20,child: Image.asset(Images.termsAndCondition,color: Theme.of(context).textTheme.bodyLarge?.color,)),
+                leading: SizedBox(width:20,height: 20,child: Image.asset(Images.termsAndCondition,
+                 // color: Theme.of(context).textTheme.bodyLarge?.color,
+                )),
                 title: Text(getTranslated('terms_and_condition', context)!, style: rubikMedium.copyWith(fontSize: Dimensions.fontSizeLarge)),
               ),
 
@@ -141,11 +159,11 @@ class OptionsView extends StatelessWidget {
                 title: Text(getTranslated('cancellation_policy', context)!, style: rubikMedium.copyWith(fontSize: Dimensions.fontSizeLarge)),
               ),
 
-              ListTile(
-                onTap: () => RouterHelper.getAboutUsRoute(),
-                leading: SizedBox(width:20,height: 20,child: Image.asset(Images.aboutUs,color: Theme.of(context).textTheme.bodyLarge!.color)),
-                title: Text(getTranslated('about_us', context)!, style: rubikMedium.copyWith(fontSize: Dimensions.fontSizeLarge)),
-              ),
+              // ListTile(
+              //   onTap: () => RouterHelper.getAboutUsRoute(),
+              //   leading: SizedBox(width:20,height: 20,child: Image.asset(Images.aboutUs,color: Theme.of(context).textTheme.bodyLarge!.color)),
+              //   title: Text(getTranslated('about_us', context)!, style: rubikMedium.copyWith(fontSize: Dimensions.fontSizeLarge)),
+              // ),
 
               if(configModel.referEarnStatus! && authProvider.isLoggedIn()) Consumer<ProfileProvider>(
                   builder: (context, profileProvider, _) {
@@ -169,12 +187,12 @@ class OptionsView extends StatelessWidget {
                 title: Text(getTranslated('loyalty_point', context)!, style: rubikMedium.copyWith(fontSize: Dimensions.fontSizeLarge)),
               ),
 
-              ListTile(
-                leading: Image.asset(Images.version, width: 20, height: 20, color: Theme.of(context).textTheme.bodyLarge!.color),
-                title: Text('${getTranslated('version', context)}', style: rubikMedium.copyWith(fontSize: Dimensions.fontSizeLarge)),
-                trailing: Text(Provider.of<SplashProvider>(context, listen: false).configModel!.softwareVersion ?? AppConstants.appVersion, style: rubikMedium.copyWith(fontSize: Dimensions.fontSizeLarge)),
-                //
-              ),
+              // ListTile(
+              //   leading: Image.asset(Images.version, width: 20, height: 20, color: Theme.of(context).textTheme.bodyLarge!.color),
+              //   title: Text('${getTranslated('version', context)}', style: rubikMedium.copyWith(fontSize: Dimensions.fontSizeLarge)),
+              //   trailing: Text(Provider.of<SplashProvider>(context, listen: false).configModel!.softwareVersion ?? AppConstants.appVersion, style: rubikMedium.copyWith(fontSize: Dimensions.fontSizeLarge)),
+              //   //
+              // ),
 
               authProvider.isLoggedIn() ? ListTile(
                 onTap: () {

@@ -154,7 +154,7 @@ class AuthProvider with ChangeNotifier {
     notifyListeners();
 
     if(config.customerVerification!.status! && config.customerVerification?.type ==  'firebase') {
-     await firebaseVerifyPhoneNumber(phoneOrEmail, isForgetPassword: true);
+    await firebaseVerifyPhoneNumber(phoneOrEmail, isForgetPassword: true);
 
     }else{
      responseModel = await _forgetPassword(phoneOrEmail);
@@ -517,6 +517,8 @@ class AuthProvider with ChangeNotifier {
     }
   }
 
+
+
   String? getGuestId()=> isLoggedIn() ? null : authRepo?.getGuestId();
 
   Future<void> firebaseVerifyPhoneNumber(String phoneNumber, {bool isForgetPassword = false})async {
@@ -607,7 +609,7 @@ class AuthProvider with ChangeNotifier {
     }else if(config.customerVerification!.status! && config.customerVerification?.type ==  'email'){
       checkEmail(signUpModel.email!);
     }else if(config.customerVerification!.status! && config.customerVerification?.type ==  'firebase'){
-      firebaseVerifyPhoneNumber(signUpModel.phone!);
+      //firebaseVerifyPhoneNumber(signUpModel.phone!);
     }
     resendButtonLoading = false;
     notifyListeners();
